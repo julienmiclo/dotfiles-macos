@@ -1,6 +1,11 @@
 [submodule "zprezto/.zprezto"]
 	path = zprezto/.zprezto
 	url = https://github.com/sorin-ionescu/prezto
+
+[submodule "iterm/themes/dracula"]
+	path = iterm/themes/dracula
+	url = https://github.com/dracula/iterm
+
 [submodule "vim/pack/themes/start/dracula"]
 	path = vim/pack/themes/start/dracula
-	url = https://github.com/dracula/iterm
+	url = https://github.com/dracula/vim
