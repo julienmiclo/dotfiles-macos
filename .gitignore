@@ -1,0 +1,5 @@
+*.swp
+vim/.vim/bundle/*
+ssh/.ssh/*
+!ssh/.ssh/config
+config/.config/yarn/global/node_modules
