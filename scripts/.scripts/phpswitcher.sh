@@ -1,21 +1,18 @@
 #!/bin/bash
 
-brew_prefix=$(brew --prefix | sed 's#/#\\\/#g')
-opt_path="$brew_prefix\/opt\/"
-apache_conf_path="~/.dotfiles/httpd/custom/001-loadmodules.conf"
-
-cat $apache_conf_path 
-exit
+brew_prefix=$(brew --prefix)
+opt_path="$brew_prefix/opt/"
+apache_conf_path="/Users/julienmiclo/.dotfiles/httpd/custom/001-loadmodules.conf"
 
 php_version="php"
 php_module="php_module"
-apache_php_lib_path="\/lib\/httpd\/modules\/libphp.so"
+apache_php_lib_path="/lib/httpd/modules/libphp.so"
 
 
 if [[ "$1" == "7.4" ]]; then
  	php_version="php@7.4"
 	php_module="php7_module" 
-	apache_php_lib_path="\/lib\/httpd\/modules\/libphp7.so"
+	apache_php_lib_path="/lib/httpd/modules/libphp7.so"
 elif [[ "$1" == "8.0" ]]; then
  	php_version="php@8.0"	
 fi
@@ -28,8 +25,8 @@ for v in `ls /opt/homebrew/opt/ | grep php | cut -c4-8 | uniq`; do
 done
 brew link --force "$php_version"
 
-
-sudo sed -i.bak "s/\#LoadModule $php_module $apache_php_mod_path/LoadModule $php_module $apache_php_mod_path/g" $apache_conf_path
+sed -i '' -e '$ d' $apache_conf_path
+echo "LoadModule $php_module $apache_php_mod_path" >> $apache_conf_path
 
 brew services restart httpd && brew services restart php
 
