@@ -1,0 +1,157 @@
+.container{
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  &:not(.fullwidth){
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  > .row{
+    width: 102%;
+    margin-left: -1%;
+    margin-right: -1%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &:last-child{
+      > div {
+        margin-bottom: 0;
+      }
+    }
+    &.centered{
+      justify-content: center;
+    }
+    &:not(.no-padding),
+    &:not(.margged){
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &:after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+    &.auto{
+      > div {
+        width: 98%;
+      }
+    }
+    &:not(.no-padding){
+      &.medium-half > *:not(.self),
+      &.medium-third > *:not(.self),
+      &.large-half > *:not(.self),
+      &.large-third > *:not(.self),
+      &.large-four > *:not(.self),
+      [class^="medium-"],
+      [class^="large-"]{
+        margin-left: 1%;
+        margin-right: 1%;
+      }
+    }
+    &.medium-half > *:not(.self),
+    &.medium-third > *:not(.self),
+    &.large-half > *:not(.self),
+    &.large-third > *:not(.self),
+    &.large-four > *:not(.self),
+    [class^="medium-"],
+    [class^="large-"],{
+      margin-bottom: 2vw;
+    }
+    .medium-large-full {
+      width: 98%;
+    }
+
+    .container{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media only screen and (min-width: 688px) {
+    &:not(.fullwidth){
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+    > .row{
+      flex-wrap: wrap;
+      flex-direction: row;
+      .medium-6{
+        width: 98%;
+      }
+      &.medium-third{
+        > *:not(.self){
+          width: #{((100 / 3) - 2)}+unquote('%')!important;
+        }
+      }
+      &.medium-half{
+        > *:not(.self){
+          width: #{((100 / 2) - 2)}+unquote('%')!important;
+        }
+      }
+      &.no-padding{
+        @for $i from 1 to 6 {
+          .medium-#{$i} {
+            width: #{((100 / 6) * $i)}+unquote('%');
+          }
+        }
+      }
+      @for $i from 1 to 6 {
+        .medium-#{$i} {
+          width: #{((100 / 6) * $i) - 2}+unquote('%');
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    max-width: 1620px;
+    &:not(.fullwidth){
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+    > .row{
+      flex-wrap: wrap;
+      &.large-half{
+        > *:not(.self) {
+          width: #{((100 / 2) - 2)}+unquote('%')!important;
+        }
+      }
+      &.large-third{
+        > *:not(.self) {
+          width: #{((100 / 3) - 2)}+unquote('%')!important;
+        }
+      }
+      &.large-four{
+        > *:not(.self) {
+          width: #{((100 / 4) - 2)}+unquote('%')!important;
+        }
+      }
+      &.no-padding{
+        @for $i from 1 to 10 {
+          .large-#{$i} {
+            width: #{((100 / 10) * $i)}+unquote('%');
+          }
+        }
+      }
+      @for $i from 1 to 10 {
+        .large-#{$i} {
+          width: #{((100 / 10) * $i) - 2}+unquote('%');
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1980px) {
+    max-width: 1980px;
+    &:not(.fullwidth){
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+    > .row{
+      flex-wrap: wrap;
+    }
+  }
+}

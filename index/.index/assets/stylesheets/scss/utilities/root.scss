@@ -1,0 +1,60 @@
+:root{
+  --color-transparent: transparent;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-dark: #333333;
+
+  --color-accent: #0366D6;
+
+  --color-text-primary: #24292e;
+  --color-text-secondary: #586069;
+
+  --color-text-base: var(--color-text-primary);
+  --color-text-link: var(--color-accent);
+
+  --color-wordpress: #117ac9;
+  --color-prestashop: #ff0076;
+  --color-api: #f1e05a;
+  --color-app: #89e051;
+  --color-vue: #89e051;
+
+  --color-yellow: #ffe227;
+
+  --border-default: var(--border-width-default) solid var(--border-color-default);
+  --border-color-default: #E1E4E8;
+  --boder-color-accent: var(--color-accent);
+  --boder-color-gray: var(--color-gray-1);
+
+  --border-width-small: 1px;
+  --border-width-default: 2px;
+  --border-width-large: 4px;
+
+  --border-radius-small: 4px;
+  --border-radius-default: 6px;
+  --border-radius-large: 8px;
+  --border-radius-rounded: 9999px;
+
+  --background-color-base: #F7FAFB;
+  --background-color-gray: #586069;
+  --background-color-accent: var(--color-accent);
+
+  --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-display: "";
+  --font-extra: "";
+
+  --font-size-1: 5.4rem;
+  --font-size-2: 4rem;
+  --font-size-3: 3.2rem;
+  --font-size-4: 2.2rem;
+  --font-size-5: 1.8rem;
+  --font-size-6: 1.6rem;
+  --font-size-7: 1.4rem;
+  --font-size-8: 1.2rem;
+
+  --font-size-base: 16px;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}

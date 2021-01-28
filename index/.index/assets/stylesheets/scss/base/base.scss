@@ -1,0 +1,45 @@
+html{
+  font-size: 62.5%;
+}
+body{
+  position: relative;
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text-base);
+  background-color: var(--background-color-base);
+  overflow-x: hidden;
+}
+
+
+strong, b{
+  font-weight: var(--font-weight-bold);
+}
+
+em{
+  font-style: italic;
+}
+
+p{
+  color: var(--color-text-base);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+h1, h2, h3{
+  color: var(--color-dark);
+  margin: 0 0 .8em;
+}
+
+
+
+
+.application-main{
+  padding-top: 12rem;
+  padding-bottom: 4rem;
+  .page-title{
+    margin-bottom: 0;
+    font-size: var(--font-size-1);
+  }
+}

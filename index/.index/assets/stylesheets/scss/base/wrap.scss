@@ -1,0 +1,82 @@
+.wrap-repository{
+  width: 100%;
+  border-radius: var(--border-radius-default);
+  border: var(--border-width-small) solid var(--border-color-default);
+  background-color: var(--color-white);
+  padding: 1.6rem;
+  margin-bottom: .8rem;
+  .meta-title{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-5);
+    color: var(--color-text-primary);
+  }
+  .meta-bookmark{
+    margin-left: auto;
+    border-radius: var(--border-radius-small);
+    border: var(--border-width-small) solid var(--border-color-default);
+    padding: .5rem;
+    color: var(--color-text-secondary);
+    svg{
+      pointer-events: none;
+    }
+    .solid{
+      color: transparent;
+    }
+    &.booked{
+      .solid{
+        color: var(--color-yellow);
+      }
+    }
+    &:hover{
+      border-color: var(--color-accent);
+    }
+  }
+  .meta-last-update-at{
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-8);
+  }
+  .meta-type{
+    color: var(--color-text-primary);
+    font-size: var(--font-size-8);
+    font-weight: var(--font-weight-bold);
+    .dot{
+      display: block;
+      width: .8rem;
+      height: .8rem;
+      border-radius: var(--border-radius-rounded);
+      background-color: var(--background-color-gray);
+      margin-right: .5rem;
+    }
+    &.wordpress{
+      .dot{
+        background-color: var(--color-wordpress);
+      }
+    }
+    &.prestashop{
+      .dot{
+        background-color: var(--color-prestashop);
+      }
+    }
+    &.api{
+      .dot{
+        background-color: var(--color-api);
+      }
+    }
+    &.app{
+      .dot{
+        background-color: var(--color-app);
+      }
+    }
+  }
+  &:hover{
+    border-color: var(--color-accent);
+    .meta-title{
+      color: var(--color-text-link);
+    }
+  }
+}
+
+
+.wrap-form{
+
+}
