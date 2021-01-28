@@ -17,13 +17,14 @@ elif [[ "$1" == "8.0" ]]; then
  	php_version="php@8.0"	
 fi
 
-
 apache_php_mod_path="$opt_path$php_version$apache_php_lib_path"
 
 for v in `ls /opt/homebrew/opt/ | grep php | cut -c4-8 | uniq`; do
 	brew unlink php$v > /dev/null
 done
-brew link --force "$php_version"
+brew link "$php_version" --force --overwrite
+
+php -v
 
 sed -i '' -e '$ d' $apache_conf_path
 echo "LoadModule $php_module $apache_php_mod_path" >> $apache_conf_path
