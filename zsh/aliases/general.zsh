@@ -25,3 +25,4 @@ alias screen="screen -U"
 alias x="screen -A -x"
 alias r="screen -D -R"
 
+alias wppst="open -a 'phpstorm.app' ./wp-content/themes"
