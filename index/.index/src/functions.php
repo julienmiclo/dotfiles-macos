@@ -14,29 +14,27 @@ function get_folder_uri_path(string $path): string
     return URIPATH.'.index/'.$path;
 }
 
-function stylesheets(array $files)
+function get_stylesheets(array $files)
 {
     if($files):
-    ob_start();
-    foreach ($files as $file): ?>
-        <link rel="stylesheet" href="<?php echo get_folder_uri_path("assets/stylesheets/$file.css"); ?>">
-    <?php
-    endforeach;
-    $html = ob_get_clean();
-    echo $html;
+      ob_start();
+        foreach ($files as $file): ?>
+            <link rel="stylesheet" href="<?php echo get_folder_uri_path("assets/stylesheets/$file.css"); ?>">
+        <?php
+        endforeach;
+      return ob_get_clean();
     endif;
 }
 
-function javascripts(array $files)
+function get_javascripts(array $files)
 {
     if($files):
         ob_start();
-        foreach ($files as $file): ?>
-            <script defer="defer" src="<?php echo get_folder_uri_path("assets/javascripts/$file.js"); ?>"></script>
-        <?php
-        endforeach;
-        $html = ob_get_clean();
-        echo $html;
+          foreach ($files as $file): ?>
+              <script defer="defer" src="<?php echo get_folder_uri_path("assets/javascripts/$file.js"); ?>"></script>
+          <?php
+          endforeach;
+        return ob_get_clean();
     endif;
 }
 
@@ -45,6 +43,41 @@ function get_svg(string $name)
   return file_get_contents(get_folder_path("assets/icons/".$name.".svg"));
 }
 
+function get_versions(): array
+{
+  $versions = [];
+
+  $versions['php'] = [
+      'name' => "php",
+      'number' => phpversion()
+  ];
+  $versions['composer'] = [
+      'name' => "composer",
+      'number' => shell_exec('composer -V')
+  ];
+  $versions['ruby'] = [
+      'name' => "ruby",
+      'number' => shell_exec('ruby -v')
+  ];
+  $versions['node'] = [
+      'name' => "node",
+      'number' => shell_exec('node -v')
+  ];
+  $versions['npm'] = [
+      'name' => "npm",
+      'number' => shell_exec('npm -v')
+  ];
+  $versions['yarn'] = [
+      'name' => "yarn",
+      'number' => shell_exec('yarn -v')
+  ];
+  $versions['brew'] = [
+      'name' => "brew",
+      'number' => shell_exec('brew -v')
+  ];
+
+  return $versions;
+}
 
 function get_repositories(): array
 {

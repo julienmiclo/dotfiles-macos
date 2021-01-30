@@ -32,7 +32,7 @@ repositories.forEach((repo) => {
         const element = e.target
         if(element.getAttribute('id') === "actionBookmark"){
             e.preventDefault()
-            
+
             const parent = e.currentTarget
             let classList = element.classList
             let values = (localStorage.getItem('repositories') === null)?[]:JSON.parse(localStorage.getItem('repositories'))

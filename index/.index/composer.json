@@ -1,0 +1,12 @@
+{
+    "name": "julienmiclo/index-dashboard",
+    "authors": [
+        {
+            "name": "julienmiclo",
+            "email": "julien@billiotte.fr"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.2"
+    }
+}

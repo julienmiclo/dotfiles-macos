@@ -1,0 +1,10 @@
+<a href="{{ repository.url }}" data-name="{{ repository.name }}" class="wrap-repository flex-col">
+    <div class="flex-middle margin-medium-bottom">
+        <span class="meta-title">{{ repository.name }}</span>
+        <button id="actionBookmark" class="meta-bookmark">{{  svg('favorite') }}</button>
+    </div>
+    <div class="flex-middle">
+        <span class="meta-type {{ repository.type.class }} flex-middle margin-large-right"><span class="dot"></span> {{ repository.type.name }}</span>
+        <span class="meta-last-update-at">Updated {{ repository.last_update_at|date('d M Y') }}</span>
+    </div>
+</a>

@@ -1,0 +1,24 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+
+        <title>{{ title }}</title>
+
+        <meta name="description" content="">
+        <meta name="hostname" content="">
+        <meta name="session" content="">
+
+        {{ stylesheets() }}
+    </head>
+    <body>
+        <div class="application-main">
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+
+        {{ javascripts() }}
+    </body>
+</html>

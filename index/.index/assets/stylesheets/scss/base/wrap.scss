@@ -80,3 +80,22 @@
 .wrap-form{
 
 }
+
+.wrap-version{
+  width: 100%;
+  border-radius: var(--border-radius-default);
+  border: var(--border-width-small) solid var(--border-color-default);
+  background-color: var(--color-white);
+  padding: 1.6rem;
+  margin-bottom: .8rem;
+  .meta-name{
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-6);
+    color: var(--color-text-primary);
+    margin-bottom: .5rem;
+  }
+  .meta-content{
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-8);
+  }
+}

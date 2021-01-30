@@ -1,0 +1,12 @@
+{% if repositories %}
+    {% include 'components/search.html.twig' %}
+    <div class="container">
+        <div class="row medium-large-full">
+
+            {% for repository in repositories %}
+                {% include 'components/repository.html.twig' with {'repository': repository} %}
+            {% endfor %}
+
+        </div>
+    </div>
+{% endif %}
