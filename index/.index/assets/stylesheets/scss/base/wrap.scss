@@ -88,6 +88,10 @@
   background-color: var(--color-white);
   padding: 1.6rem;
   margin-bottom: .8rem;
+  .meta-update{
+    margin-right: .8rem;
+    color: var(--color-red);
+  }
   .meta-name{
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-6);

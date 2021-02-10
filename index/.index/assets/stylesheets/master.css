@@ -14,6 +14,8 @@
   --color-app: #89e051;
   --color-vue: #89e051;
   --color-yellow: #ffe227;
+  --color-green: #16c79a;
+  --color-red: #f05454;
   --border-default: var(--border-width-default) solid var(--border-color-default);
   --border-color-default: #E1E4E8;
   --boder-color-accent: var(--color-accent);
@@ -515,6 +517,9 @@ h1, h2, h3 {
   background-color: var(--color-white);
   padding: 1.6rem;
   margin-bottom: .8rem; }
+  .wrap-version .meta-update {
+    margin-right: .8rem;
+    color: var(--color-red); }
   .wrap-version .meta-name {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-6);

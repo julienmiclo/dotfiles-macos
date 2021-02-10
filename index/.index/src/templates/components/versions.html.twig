@@ -5,7 +5,10 @@
             <div class="list-versions">
                 {% for version in versions %}
                     <div class="wrap-version">
-                        <div class="meta-name">{{ version.name }}</div>
+                        <div class="flex">
+                            {% if version.update %}<div class="meta-update">{{ svg('update') }}</div>{% endif %}
+                            <div class="meta-name">{{ version.name }}</div>
+                        </div>
                         <div class="meta-content">{{ version.number }}</div>
                     </div>
                 {% endfor %}

@@ -73,7 +73,8 @@ function get_versions(): array
   ];
   $versions['brew'] = [
       'name' => "brew",
-      'number' => shell_exec('brew -v')
+      'number' => shell_exec('brew -v'),
+      'update' => !empty(shell_exec('brew outdated'))
   ];
 
   return $versions;
