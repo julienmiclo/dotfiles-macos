@@ -26,3 +26,5 @@ alias x="screen -A -x"
 alias r="screen -D -R"
 
 alias wppst="open -a 'phpstorm.app' ./wp-content/themes"
+
+alias myip="curl https://ipecho.net/plain"
