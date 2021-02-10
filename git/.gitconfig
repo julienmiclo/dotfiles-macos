@@ -1,7 +1,12 @@
 # This is Git's per-user configuration file.
 [user]
-	name = julienmiclo
-	email = julien@billiotte.fr
+	name = Julien Miclo
+	email = julienmiclo@gmail.com
 # Please adapt and uncomment the following lines:
 #	name = julienmiclo
 #	email = julien@billiotte.fr
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
