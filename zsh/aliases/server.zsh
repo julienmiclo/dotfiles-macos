@@ -6,4 +6,3 @@ alias server-stop="brew services stop php && brew services stop httpd"
 alias php74="sh ~/.scripts/phpswitcher.sh 7.4"
 alias php8="sh ~/.scripts/phpswitcher.sh 8.0"
 
-alias update-shit="brew update && brew outdated && brew upgrade && brew cleanup"
