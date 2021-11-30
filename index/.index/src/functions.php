@@ -1,5 +1,5 @@
 <?php
-$http = ($_SERVER['HTTPS'] === "on")?'https':'http';
+$http = (isset($_SERVER['HTTPS']))?'https':'http';
 define('LANG', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
 define('ABSPATH', $_SERVER['DOCUMENT_ROOT']."repositories/");
 define('URIPATH', $http."://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
@@ -14,28 +14,26 @@ function get_folder_uri_path(string $path): string
     return URIPATH.'.index/'.$path;
 }
 
-function get_stylesheets(array $files)
+function get_stylesheets(array $files): string
 {
-    if($files):
-      ob_start();
-        foreach ($files as $file): ?>
-            <link rel="stylesheet" href="<?php echo get_folder_uri_path("assets/stylesheets/$file.css"); ?>">
-        <?php
-        endforeach;
-      return ob_get_clean();
-    endif;
+    $stylesheets = "";
+    if($files){
+        foreach ($files as $file){
+            $stylesheets .= '<link rel="stylesheet" type="text/css" href="'.get_folder_uri_path('assets/stylesheets/'.$file.'.css').'">';
+        }
+    }
+    return $stylesheets;
 }
 
-function get_javascripts(array $files)
+function get_javascripts(array $files): string
 {
-    if($files):
-        ob_start();
-          foreach ($files as $file): ?>
-              <script defer="defer" src="<?php echo get_folder_uri_path("assets/javascripts/$file.js"); ?>"></script>
-          <?php
-          endforeach;
-        return ob_get_clean();
-    endif;
+    $javascripts = "";
+    if($files){
+        foreach ($files as $file){
+            $javascripts .= '<script type="text/javascript" src="'.get_folder_uri_path('assets/javascripts/'.$file.'.js').'"></script>';
+        }
+    }
+    return $javascripts;
 }
 
 function get_svg(string $name)
@@ -73,7 +71,7 @@ function get_versions(): array
   ];
   $versions['brew'] = [
       'name' => "brew",
-      'number' => shell_exec('brew -v'),
+      'number' => shell_exec('brew -v | head -n 1'),
       'update' => !empty(shell_exec('brew outdated'))
   ];
 
@@ -97,6 +95,10 @@ function get_repositories(): array
             'type' => get_type($directory->getPathname())
         ];
     }
+
+    usort($repositories, function($a, $b) {
+        return $b['last_update_at'] - $a['last_update_at'];
+    });
 
     return $repositories;
 }
