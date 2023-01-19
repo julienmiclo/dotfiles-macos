@@ -1,4 +1,4 @@
-alias gt='git status'
-alias gp='git push'
-alias gsub='git submodule update --init --recursive'
-alias gitforce='git fetch --all && git reset --hard origin/master && git pull origin master'
+alias gits='git status'
+alias gitm='git commit -m'
+alias gitb='git branch -D'
+alias gitc='git checkout -b'
