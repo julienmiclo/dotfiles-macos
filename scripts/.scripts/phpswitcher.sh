@@ -8,16 +8,15 @@ php_version="php"
 php_module="php_module"
 apache_php_lib_path="/lib/httpd/modules/libphp.so"
 
-
-if [[ "$1" == "7.4" ]]; then
- 	php_version="php@7.4"
-	php_module="php7_module" 
-	apache_php_lib_path="/lib/httpd/modules/libphp7.so"
-elif [[ "$1" == "8.0" ]]; then
- 	php_version="php@8.0"	
+if [ "$1" == "8.2" ]
+then
+ 	php_version="php@8.2"	
+elif [ "$1" == "8.1" ]
+then
+        php_version="php@8.1"
 fi
 
-apache_php_mod_path="$opt_path$php_version$apache_php_lib_path"
+apache_php_mod_path="/opt/homebrew/opt/$php_version/lib/httpd/modules/libphp.so"
 
 for v in `ls /opt/homebrew/opt/ | grep php | cut -c4-8 | uniq`; do
 	brew unlink php$v > /dev/null
