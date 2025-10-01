@@ -1,4 +1,5 @@
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-
-chruby 3.0.5
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/lib/ruby/gems/3.4.0/bin"
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"

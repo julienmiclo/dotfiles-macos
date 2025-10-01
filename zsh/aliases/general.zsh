@@ -26,7 +26,16 @@ alias x="screen -A -x"
 alias r="screen -D -R"
 
 alias python="python3"
+alias pip=pip3
+
+alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 alias wppst="open -a 'phpstorm.app' ./wp-content/themes"
 
 alias myip="curl https://ipecho.net/plain"
+
+alias cleanzip='for f in *.zip; do zip -qd "$f" "*/.DS_Store"; done && for f in *.zip; do zip -qd "$f" "__MACOSX/*"; done'
+
+alias backgroundremover='docker run -it --rm -v "$(pwd):/tmp" bgremover:latest'
+
+alias freyr='docker run -it --rm -v $PWD:/data freyrcli/freyrjs'

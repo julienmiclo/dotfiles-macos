@@ -15,3 +15,6 @@ path=(
 	/usr/local/{bin,sbin}
 	$path
 )
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
