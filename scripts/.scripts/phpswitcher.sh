@@ -9,7 +9,14 @@ php_module="php_module"
 module_name="libphp"
 #apache_php_lib_path="/lib/httpd/modules/libphp.so"
 
-if [ "$1" == "8.2" ]
+
+if [ "$1" == "8.4" ]
+then
+	php_version="php@8.4"
+elif [ "$1" == "8.3" ]
+then
+	php_version="php@8.3"	
+elif [ "$1" == "8.2" ]
 then
  	php_version="php@8.2"	
 elif [ "$1" == "8.1" ]
@@ -44,7 +51,7 @@ php -v
 sed -i '' -e '$ d' $apache_conf_path
 echo "LoadModule $php_module $apache_php_mod_path" >> $apache_conf_path
 
-brew services restart httpd -d -v && brew services restart php -d -v
+brew services restart httpd && brew services restart php
 
 brew services
 

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Show hidden files
+defaults write com.apple.Finder AppleShowAllFiles true
+killall Finder
+
 # Stop System Preferences from overriding stuff
 osascript -e 'tell application "System Preferences" to quit'
 
